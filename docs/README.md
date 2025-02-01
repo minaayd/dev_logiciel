@@ -1,45 +1,61 @@
-# Projet d'Analyse des Données Titanic
 
-## Objectifs du Projet
+# README.md
 
-Notre projet vise à professionnaliser et industrialiser le code source d'une application d'analyse de données basée sur le jeu de données Titanic de Kaggle<a href="3"/>. 
+## Les objectifs du projet
 
-### Mission Principale
-- Améliorer la qualité et la maintenabilité du code source<a href="5"/>
-- Respecter nos contraintes de temps, de qualité et de budget<a href="6"/>
+Notre projet vise à professionnaliser et industrialiser le code source d'une application d'analyse de données basée sur le jeu de données Titanic de Kaggle. 
+Ce jeu contient des informations sur les passagers du Titanic (âge, classe, genre, etc.) et leur survie, permettant de créer des modèles prédictifs. 
+Notre objectif principal est d'optimiser et de standardiser le code existant selon les meilleures pratiques de l'industrie pour garantir sa maintenabilité et sa qualité.
 
-### Étapes Clés
-1. Restructurer le code en modules Python réutilisables<a href="8"/>
-2. Implémenter les standards de développement (PEP 8, tests unitaires, documentation)<a href="9"/>
-3. Organiser la collaboration via Git et GitHub<a href="10"/>
-4. Mettre en place un pipeline CI/CD pour l'automatisation<a href="11"/>
+Notre mission principale est double :
 
-## Installation et Utilisation
+- Améliorer la qualité et la maintenabilité du code source
+- Respecter nos contraintes de temps, de qualité et de budget
+
+Pour atteindre ces objectifs, nous suivrons ces étapes clés :
+
+1. Restructurer le code en modules Python réutilisables
+2. Implémenter les standards de développement (PEP 8, tests unitaires, documentation)
+3. Organiser la collaboration via Git et GitHub
+4. Mettre en place un pipeline CI/CD pour l'automatisation
+
+En résumé, ce projet vise à professionnaliser notre base de code en appliquant les meilleures pratiques de développement pour assurer sa qualité et sa pérennité.
+
+## Les instructions d'installation et d'utilisation
+
+Voici un guide étape par étape pour installer et utiliser le projet :
 
 ### 1. Préparation des données
-- train.csv — Données d'entraînement (891 passagers)<a href="17"/>
-- test.csv — Données de test (418 passagers)<a href="18"/>
 
-### 2. Configuration
-Définir les chemins d'accès dans `config.py`<a href="20"/>
+Commencez par télécharger les deux fichiers CSV essentiels :
+- train.csv — Contient les données d'entraînement (891 passagers)
+- test.csv — Contient les données de test (418 passagers)
 
-### 3. Installation des dépendances
+### 2. Configuration du projet
+
+Une fois les fichiers téléchargés, définissez les chemins d'accès dans le fichier config.py. 
+Cette centralisation facilite la gestion du projet.
+
+### 3. Installation des outils
+
 ```bash
 pip install scikit-learn joblib pandas numpy
-```<a href="23"/>
+```
 
-### 4. Architecture
-Le projet est divisé en trois modules principaux<a href="25"/>:
-- `data_preprocessing.py` — Nettoyage et préparation des données<a href="26"/>
-- `model_training.py` — Entraînement du modèle<a href="27"/>
-- `model_evaluation.py` — Analyse des performances<a href="28"/>
+### 4. Architecture du code
 
-### 5. Contrôle Qualité
-Outils utilisés<a href="30"/>:
-- Flake8 — Vérification du style<a href="31"/>
-- Black — Formatage cohérent<a href="32"/>
+Le projet est divisé en trois modules principaux :
+- data_preprocessing.py — Gère le nettoyage et la préparation des données
+- model_training.py — S'occupe de l'entraînement du modèle
+- model_evaluation.py — Analyse les performances du modèle
 
-### Structure du Projet
+### 5. Contrôle qualité
+
+Le code est maintenu aux standards de qualité grâce à deux outils :
+- Flake8 — Vérifie le style du code
+- Black — Assure un formatage cohérent
+Voici l'organisation des fichiers du projet :
+
 ```
 TITANIC/
 ├── src/
@@ -56,18 +72,34 @@ TITANIC/
 │   ├── test.csv
 │   └── train.csv
 ├── requirements.txt
-```<a href="34"/>
+```
 
-## Équipe
+## Prise en main du projet par les utilisateurs
+
+Notre équipe est composée de 3 membres :
+- Mina
+- Paul
+- Bastien
+
+Chaque membre apporte ses compétences et son expertise spécifiques à la réussite du projet.
 
 ### Mina - Chef de Projet
-Responsable de la gestion de projet, documentation et coordination d'équipe<a href="42"/>
+
+En tant que chef de projet en alternance, Mina est responsable de la traduction des besoins métiers en spécifications techniques. Elle assure la supervision du projet, le respect des délais, de la qualité et des coûts. Ses responsabilités incluent la rédaction du rapport, la gestion de la documentation README et la coordination d'équipe pour maintenir une communication efficace. Elle a également participé au développement des tests unitaires.
 
 ### Paul - Développeur Python
-Responsable du développement, implémentation des tests et respect des standards<a href="44"/>
+
+Spécialisé en programmation Python dans le cadre de son alternance, Paul dirige le développement du code et en assure la qualité. Il restructure le notebook initial en modules Python distincts selon les meilleures pratiques. Il implémente les tests unitaires avec pytest pour valider chaque composant, notamment les fonctions de prétraitement des données et la logique d'entraînement des modèles. Son travail inclut l'application des standards PEP 8 et l'utilisation de noms explicites pour les fonctions et variables.
 
 ### Bastien - DevOps
-Gestion du pipeline CI/CD et automatisation<a href="46"/>:
-- Linting (Flake8)<a href="47"/>
-- Formatage (Black)<a href="48"/>
-- Tests unitaires (pytest)<a href="49"/>
+
+Bastien gère le pipeline CI/CD via GitHub Actions, qui automatise :
+- Le linting (Flake8) pour la détection d'erreurs
+- Le formatage du code (Black) pour la cohérence
+- Les tests unitaires (pytest) pour la fiabilité
+
+Cette automatisation garantit la qualité du code et facilite le déploiement.
+
+### Une approche véritablement collaborative
+
+Bien que chaque membre ait eu un rôle défini, notre approche a été résolument collaborative. Toutes les décisions importantes ont été prises en équipe, chacun apportant son expertise et son point de vue. Tous les membres ont participé à la revue de code, aux tests et aux discussions techniques. Cette synergie nous a permis d'aboutir à une structure de projet solide et un code de qualité qui reflètent la contribution de chacun.
