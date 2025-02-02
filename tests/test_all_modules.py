@@ -195,4 +195,3 @@ def test_full_pipeline(sample_data, tmp_path):
     # Vérifications finales
     assert len(predictions) == test_data.shape[0]
     assert all(pred in [0, 1] for pred in predictions)
-

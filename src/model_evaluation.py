@@ -103,9 +103,7 @@ def load_preprocessed_data():
     """
     if os.path.exists(test_features_path) and os.path.exists(rf_model_path):
         try:
-            _, test_data = load_data(
-                train_data_path, test_data_path
-            )
+            _, test_data = load_data(train_data_path, test_data_path)
             X_test = pd.read_csv(test_features_path)
             logging.info("Données prétraitées chargées avec succès.")
             return test_data, X_test
@@ -113,9 +111,7 @@ def load_preprocessed_data():
             logging.error(f"Erreur lors du chargement des données prétraitées : {e}")
             raise
     else:
-        logging.error(
-            "Problème avec le module 2. Fichiers prétraités manquants"
-        )
+        logging.error("Problème avec le module 2. Fichiers prétraités manquants")
         raise FileNotFoundError("Fichiers prétraités non trouvés.")
 
 

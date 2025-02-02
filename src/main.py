@@ -26,9 +26,7 @@ def run_script(script_name):
 
     except Exception as e:
         # Capture toute exception et log l'erreur
-        logging.error(
-            f"Exception survenue lors de l'exécution de {script_name}: {e}"
-        )
+        logging.error(f"Exception survenue lors de l'exécution de {script_name}: {e}")
 
 
 def main():

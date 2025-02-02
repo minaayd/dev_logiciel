@@ -14,10 +14,7 @@ def setup_logging():
     )
 
 
-def load_data(
-        train_path: str,
-        test_path: str
-) -> tuple[pd.DataFrame, pd.DataFrame]:
+def load_data(train_path: str, test_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
     """
     Charge les données d'entraînement et de test depuis les fichiers CSV.
 
@@ -85,19 +82,14 @@ def calculate_survival_rate(train_data: pd.DataFrame) -> None:
         rate_women = train_data.loc[train_data.Sex == "female", "Survived"].mean()
         rate_men = train_data.loc[train_data.Sex == "male", "Survived"].mean()
         logging.info(
-            f"Taux de survie - Femmes : {rate_women:.2%},"
-            f"Hommes : {rate_men:.2%}"
+            f"Taux de survie - Femmes : {rate_women:.2%}," f"Hommes : {rate_men:.2%}"
         )
     except Exception as e:
         logging.error(f"Erreur lors du calcul du taux de survie : {e}")
         raise
 
 
-def save_data(
-        X_train: pd.DataFrame,
-        y_train: pd.Series,
-        X_test: pd.DataFrame
-) -> None:
+def save_data(X_train: pd.DataFrame, y_train: pd.Series, X_test: pd.DataFrame) -> None:
     """
     Sauvegarde les données traitées dans des fichiers CSV.
 
