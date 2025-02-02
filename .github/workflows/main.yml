@@ -2,41 +2,41 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main, develop ]
   pull_request:
-    branches:
-      - main
+    branches: [ main, develop ]
 
 jobs:
-  ci-cd:
+  quality:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
-    - name: 🛎️ Checkout du code
-      uses: actions/checkout@v3
-
-    - name: 🐍 Installation de Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
-
-    - name: 📦 Installation des dépendances
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: 🔎 Vérification du formatage (black)
-      run: black --check .
-
-    - name: 🔍 Linting du code (flake8)
-      run: flake8 .
-
-    - name: 🧪 Exécution des tests unitaires (pytest)
-      run: pytest
-
-    - name: 🚀 Déploiement (optionnel)
-      if: success()
-      run: |
-        echo "Déploiement en cours..."
-        # Ajoutez ici les commandes pour le déploiement, si nécessaire.
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 black pytest
+          pip install -r requirements.txt
+          
+      - name: Format with Black
+        run: |
+          black .
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -am "Apply automatic Black formatting" || echo "No changes to commit"
+          git push || echo "No changes to push"
+          
+      - name: Lint with flake8
+        run: |
+          flake8 . --count --max-complexity=10 --max-line-length=88 --statistics
+          
+      - name: Run tests with pytest
+        run: |
+          pytest tests/ -v
