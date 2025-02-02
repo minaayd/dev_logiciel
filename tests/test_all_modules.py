@@ -11,9 +11,12 @@ import pandas as pd
 import numpy as np
 import sys
 import os
-from src.data_preprocessing import preprocess_data
-from src.model_training import train_model
-from src.model_evaluation import evaluate_model
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+
+from data_preprocessing import preprocess_data
+from model_training import train_model
+from model_evaluation import evaluate_model
+
 
 
 # Fixtures pour les tests
