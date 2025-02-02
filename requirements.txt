@@ -1,3 +1,6 @@
-joblib
 pandas
+numpy
+pytest
 scikit-learn
+joblib
+logging
