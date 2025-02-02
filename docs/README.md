@@ -92,6 +92,8 @@ TITANIC/
 │   ├── test.csv
 │   └── train.csv
 ├── requirements.txt
+├── .github/workflows/
+│   ├── pipeline.yml
 ```
 
 # Prise en main du projet par les utilisateurs
