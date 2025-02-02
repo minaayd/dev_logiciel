@@ -16,7 +16,6 @@ from src.model_training import train_model
 from src.model_evaluation import evaluate_model
 
 
-
 # Fixtures pour les tests
 @pytest.fixture
 def sample_data():
