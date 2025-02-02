@@ -4,3 +4,5 @@ pytest
 scikit-learn
 joblib
 logging
+black
+flake8
