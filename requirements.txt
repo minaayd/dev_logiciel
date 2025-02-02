@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 joblib
 pandas
 scikit-learn
-=======
-pandas
 numpy
 pytest
-scikit-learn
-joblib
 logging
->>>>>>> develop
+black
+flake8
+
