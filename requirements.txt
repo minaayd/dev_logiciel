@@ -6,4 +6,3 @@ pytest
 logging
 black
 flake8
-
