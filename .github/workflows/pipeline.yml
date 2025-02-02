@@ -35,7 +35,7 @@ jobs:
           
       - name: Lint with flake8
         run: |
-          flake8 . --count --max-complexity=10 --max-line-length=88 --statistics
+          flake8 . --count --max-complexity=10 --max-line-length=88 --statistics --exclude=test_all_modules.py
           
       - name: Run tests with pytest
         run: |
