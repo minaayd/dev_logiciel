@@ -25,10 +25,6 @@ jobs:
           pip install flake8 black pytest
           pip install -r requirements.txt
           
-      - name: Lint with flake8
-        run: |
-          flake8 . --count --max-complexity=10 --max-line-length=88 --statistics
-          
       - name: Format with Black
         run: |
           black .
@@ -36,6 +32,10 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git commit -am "Apply automatic Black formatting" || echo "No changes to commit"
           git push || echo "No changes to push"
+          
+      - name: Lint with flake8
+        run: |
+          flake8 . --count --max-complexity=10 --max-line-length=88 --statistics
           
       - name: Run tests with pytest
         run: |
