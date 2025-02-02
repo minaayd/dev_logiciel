@@ -8,10 +8,15 @@ des données jusqu'à l'évaluation du modèle.
 import pytest
 import time
 import pandas as pd
+import numpy as np
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+
 from data_preprocessing import preprocess_data
 from model_training import train_model
 from model_evaluation import evaluate_model
-import numpy as np
 
 
 # Fixtures pour les tests
@@ -142,8 +147,6 @@ def test_evaluate_model(sample_data):
     assert all(pred in [0, 1] for pred in predictions)
 
 
-
-
 def test_train_model_performance(sample_data):
     """
     Teste la performance de l'entraînement du modèle, en affichant
@@ -154,7 +157,7 @@ def test_train_model_performance(sample_data):
     """
     train_data, test_data = sample_data
     X, y, _ = preprocess_data(train_data, test_data)
-    
+
     # Mesurer le temps d'entraînement
     start_time = time.time()
     model = train_model(X, y)

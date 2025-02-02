@@ -31,7 +31,10 @@ if not (
     and os.path.exists(test_features_path)
 ):
     logging.warning("Module 1 non exécuté. Lancement en cours...")
-    subprocess.run(["python", "datapreprocessing.py"], check=True)
+    subprocess.run(
+        ["python", os.path.join(os.path.dirname(__file__), "data_preprocessing.py")],
+        check=True,
+    )
 
 
 def train_model(X, y):
